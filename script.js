@@ -63,6 +63,19 @@ class LinkedList {
   headNode() {
     return this.head.data;
   }
+
+  // returns the last node in the list
+  tail() {
+    let current = this.head;
+
+    // loop through all nodes
+    while (current) {
+      // if the next node doesn't exist, return current (= last one)
+      if (!current.next) return current;
+
+      current = current.next;
+    }
+  }
 }
 
 // to visualize what the linked list looks like
@@ -85,4 +98,4 @@ myList.append("Node 1");
 myList.append("Node 2");
 myList.preapend("First");
 
-console.log(myList.headNode());
+console.log(myList.tail());
