@@ -48,11 +48,11 @@ class LinkedList {
   // returns the total number of nodes in the list
   size() {
     let count = 0;
-    let current = this.head;
+    let node = this.head;
 
     // count every step until next is null
-    while (current) {
-      current = current.next;
+    while (node) {
+      node = node.next;
       count++;
     }
 
@@ -66,14 +66,14 @@ class LinkedList {
 
   // returns the last node in the list
   tail() {
-    let current = this.head;
+    let node = this.head;
 
     // loop through all nodes
-    while (current) {
+    while (node) {
       // if the next node doesn't exist, return current (= last one)
-      if (!current.next) return current;
+      if (!node.next) return node;
 
-      current = current.next;
+      node = node.next;
     }
   }
 }
