@@ -115,6 +115,20 @@ class LinkedList {
 
     return node;
   }
+
+  // returns true if the passed in value is in the list and otherwise returns false
+  contains(value) {
+    let node = this.head;
+
+    // iterate to the end of the list
+    while (node) {
+      if (node.data === value) return true;
+
+      node = node.next;
+    }
+
+    return false;
+  }
 }
 
 // to visualize what the linked list looks like
@@ -137,4 +151,4 @@ myList.append("Node 1");
 myList.append("Node 2");
 myList.preapend("First");
 
-console.log(myList.tail());
+console.log(myList.contains("Node 1"));
