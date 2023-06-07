@@ -58,6 +58,11 @@ class LinkedList {
 
     return count;
   }
+
+  // head returns the first node in the list
+  headNode() {
+    return this.head.data;
+  }
 }
 
 // to visualize what the linked list looks like
@@ -80,4 +85,4 @@ myList.append("Node 1");
 myList.append("Node 2");
 myList.preapend("First");
 
-console.log(myList.size());
+console.log(myList.headNode());
