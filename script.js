@@ -120,7 +120,6 @@ class LinkedList {
   contains(value) {
     let node = this.head;
 
-    // iterate to the end of the list
     while (node) {
       if (node.data === value) return true;
 
@@ -128,6 +127,21 @@ class LinkedList {
     }
 
     return false;
+  }
+
+  // returns the index of the node containing value, or null if not found
+  find(value) {
+    let node = this.head;
+    let count = 0;
+
+    while (node) {
+      if (node.data === value) return count;
+
+      node = node.next;
+      count++;
+    }
+
+    return null;
   }
 }
 
@@ -151,4 +165,4 @@ myList.append("Node 1");
 myList.append("Node 2");
 myList.preapend("First");
 
-console.log(myList.contains("Node 1"));
+console.log(myList.find("Node 2"));
