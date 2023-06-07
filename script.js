@@ -68,13 +68,13 @@ class LinkedList {
   tail() {
     let node = this.head;
 
-    // loop through all nodes
-    while (node) {
-      // if the next node doesn't exist, return current (= last one)
-      if (!node.next) return node;
-
+    // stop loop when next node is null, node will then be the last one
+    // node handles empty lists
+    while (node && node.next) {
       node = node.next;
     }
+
+    return node;
   }
 }
 
