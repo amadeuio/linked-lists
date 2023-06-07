@@ -143,6 +143,20 @@ class LinkedList {
 
     return null;
   }
+
+  // represents LinkedList objects as strings. ( value ) -> ( value ) -> ( value ) -> null
+  toString() {
+    let node = this.head;
+    let listString = "";
+
+    while (node) {
+      listString += `( ${node.data} ) -> `;
+      node = node.next;
+    }
+
+    listString += "null";
+    return listString;
+  }
 }
 
 // to visualize what the linked list looks like
@@ -165,4 +179,4 @@ myList.append("Node 1");
 myList.append("Node 2");
 myList.preapend("First");
 
-console.log(myList.find("Node 2"));
+console.log(myList.toString());
