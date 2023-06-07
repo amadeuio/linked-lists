@@ -44,6 +44,20 @@ class LinkedList {
     // the new node becomes the new head of the list
     this.head = newNode;
   }
+
+  // returns the total number of nodes in the list
+  size() {
+    let count = 0;
+    let current = this.head;
+
+    // count every step until next is null
+    while (current) {
+      current = current.next;
+      count++;
+    }
+
+    return count;
+  }
 }
 
 // to visualize what the linked list looks like
@@ -64,6 +78,6 @@ myExamleList = {
 let myList = new LinkedList();
 myList.append("Node 1");
 myList.append("Node 2");
-myList.preapend("hi");
+myList.preapend("First");
 
-console.log(myList);
+console.log(myList.size());
