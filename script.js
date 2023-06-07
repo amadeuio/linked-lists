@@ -76,6 +76,24 @@ class LinkedList {
 
     return node;
   }
+
+  // at(index) returns the node at the given index
+  at(index) {
+    let node = this.head;
+
+    // index out of bounds
+    if (index < 0 || index > this.size()) {
+      return "Index out of bounds";
+    }
+
+    // advance as many steps as index
+    for (let i = 0; i < index; i++) {
+      node = node.next;
+    }
+
+    // then return current node
+    return node;
+  }
 }
 
 // to visualize what the linked list looks like
@@ -98,4 +116,4 @@ myList.append("Node 1");
 myList.append("Node 2");
 myList.preapend("First");
 
-console.log(myList.tail());
+console.log(myList.at(4));
