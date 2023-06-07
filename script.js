@@ -69,7 +69,7 @@ class LinkedList {
     let node = this.head;
 
     // stop loop when next node is null, node will then be the last one
-    // node handles empty lists
+    // 'node &&' handles empty lists
     while (node && node.next) {
       node = node.next;
     }
@@ -77,7 +77,7 @@ class LinkedList {
     return node;
   }
 
-  // at(index) returns the node at the given index
+  // returns the node at the given index
   at(index) {
     let node = this.head;
 
@@ -92,6 +92,27 @@ class LinkedList {
     }
 
     // then return current node
+    return node;
+  }
+
+  // removes the last element from the list
+  pop() {
+    let node = this.head;
+    let prevNode = null;
+
+    // iterate to the end of the list
+    while (node && node.next) {
+      prevNode = node;
+      node = node.next;
+    }
+
+    if (prevNode) {
+      prevNode.next = null; // remove the last node from the list
+    } else {
+      // if there's no previous node, the list only has one node.
+      this.head = null;
+    }
+
     return node;
   }
 }
@@ -116,4 +137,4 @@ myList.append("Node 1");
 myList.append("Node 2");
 myList.preapend("First");
 
-console.log(myList.at(4));
+console.log(myList.tail());
