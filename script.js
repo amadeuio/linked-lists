@@ -1,3 +1,4 @@
+// node constructor
 class Node {
   constructor(data, next = null) {
     this.data = data;
@@ -5,6 +6,7 @@ class Node {
   }
 }
 
+// list constructor
 class LinkedList {
   // by default the list will have a head property set to null
   constructor() {
@@ -209,11 +211,12 @@ myExamleList = {
   },
 };
 
-// create a new LinkedList and set the head to our new Node
+// create a new LinkedList and apply some methods to it
 let myList = new LinkedList();
 myList.append("Node 1");
 myList.append("Node 2");
 myList.preapend("First");
 myList.insertAt("hi", 3);
 
+// log the string representation of the list to console
 console.log(myList.toString());
