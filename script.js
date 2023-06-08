@@ -157,6 +157,25 @@ class LinkedList {
     listString += "null";
     return listString;
   }
+
+  // inserts a new node with the provided value at the given index
+  insertAt(value, index) {
+    // index out of bounds
+    if (index < 0 || index > this.size()) {
+      return; // exit the function
+    }
+
+    // index is first node
+    if (index === 0) {
+      this.preapend(value);
+      return;
+    }
+
+    let node = this.at(index - 1); // move to the node before the index
+    const newNode = new Node(value);
+    newNode.next = node.next; // set the continuation of the newNode
+    node.next = newNode; // add newNode to specified position
+  }
 }
 
 // to visualize what the linked list looks like
@@ -178,5 +197,6 @@ let myList = new LinkedList();
 myList.append("Node 1");
 myList.append("Node 2");
 myList.preapend("First");
+myList.insertAt("hi", 3);
 
 console.log(myList.toString());
