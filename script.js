@@ -176,9 +176,26 @@ class LinkedList {
     newNode.next = node.next; // set the continuation of the newNode
     node.next = newNode; // add newNode to specified position
   }
+
+  // that removes the node at the given index
+  removeAt(index) {
+    // index out of bounds
+    if (index < 0 || index >= this.size()) {
+      return; // exit the function
+    }
+
+    // index is first node
+    if (index === 0) {
+      this.head = this.head.next;
+      return;
+    }
+
+    let node = this.at(index - 1);
+    node.next = node.next.next;
+  }
 }
 
-// to visualize what the linked list looks like
+// example to visualize what the linked list looks like
 myExamleList = {
   head: {
     data: "Node 1",
